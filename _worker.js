@@ -707,7 +707,7 @@ function getVLESSConfig(userIDs, hostName) {
 	const output = userIDArray.map((userID) => {
 		const vlessMain = 'vless://' + userID + '@' + hostName + commonUrlPart;
 		const vlessSec = 'vless://' + userID + '@' + hostName + commonUrlPartt;
-		return `<h2>VLESS CLOUDFLARE FREE</h2>${hashSeparator}\nv2ray port 443
+		return `<center><h2>VLESS CLOUDFLARE FREE</h2><center>${hashSeparator}\nv2ray port 443
 ---------------------------------------------------------------
 ${vlessMain}
 <button onclick='copyToClipboard("${vlessMain}")'><i class="fa fa-clipboard"></i> Copy vless port 443</button>
@@ -723,12 +723,12 @@ ${vlessSec}
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 	// Prepare header string
 	const header = `
-<a href='v2rayng://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>v2rayNG Optimized IP Auto</a></p>`;
+`;
 
 	// HTML Head with CSS and FontAwesome library
 	const htmlHead = `
   <head>
-	<title>EDtunnel: VLESS configuration</title>
+	<title>VLESS CLOUDFLARE FREE</title>
 	<meta name='description' content='This is a tool for generating VLESS protocol configurations. Give us a star on GitHub https://github.com/3Kmfi6HP/EDtunnel if you found it useful!'>
 	<meta name='keywords' content='EDtunnel, cloudflare pages, cloudflare worker, severless'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -819,38 +819,7 @@ ${vlessSec}
 const portSet_http = new Set([80, 8080, 8880, 2052, 2086, 2095, 2082]);
 const portSet_https = new Set([443, 8443, 2053, 2096, 2087, 2083]);
 
-function createVLESSSub(userID_Path, hostName) {
-	const userIDArray = userID_Path.includes(',') ? userID_Path.split(',') : [userID_Path];
-	const commonUrlPart_http = `?encryption=none&security=none&fp=random&type=ws&host=${hostName}&path=%2Fvless-bodong#`;
-	const commonUrlPart_https = `?encryption=none&security=tls&sni=${hostName}&fp=random&type=ws&host=${hostName}&path=%2Fvless-bodong#`;
 
-	const output = userIDArray.flatMap((userID) => {
-		const httpConfigurations = Array.from(portSet_http).flatMap((port) => {
-			if (!hostName.includes('pages.dev')) {
-				const urlPart = `${hostName}-HTTP-${port}`;
-				const vlessMainHttp = 'vless://' + userID + '@' + hostName + ':' + '443' + commonUrlPart_http + urlPart;
-				return proxyIPs.flatMap((proxyIP) => {
-					const vlessSecHttp = 'vless://' + userID + '@' + hostName + ':' + '80' + commonUrlPart_http + urlPart + '-' + hostName + '-EDtunnel';
-					return [vlessMainHttp, vlessSecHttp];
-				});
-			}
-			return [];
-		});
-
-		const httpsConfigurations = Array.from(portSet_https).flatMap((port) => {
-			const urlPart = `${hostName}-HTTPS-${port}`;
-			const vlessMainHttps = 'vless://' + userID + '@' + hostName + ':' + '443' + commonUrlPart_https + urlPart;
-			return proxyIPs.flatMap((proxyIP) => {
-				const vlessSecHttps = 'vless://' + userID + '@' + hostName + ':' + '80' + commonUrlPart_https + urlPart + '-' + hostName + '-EDtunnel';
-				return [vlessMainHttps, vlessSecHttps];
-			});
-		});
-
-		return [...httpConfigurations, ...httpsConfigurations];
-	});
-
-	return output.join('\n');
-}
 
 const cn_hostnames = [
 	't.me/trust_bodong',
