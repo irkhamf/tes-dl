@@ -696,7 +696,7 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userIDs, hostName) {
-	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fsonzaix#${hostName}`;
+	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless-bodong#${hostName}`;
 	const hashSeparator = "################################################################";
 
 	// Split the userIDs into an array
@@ -705,8 +705,8 @@ function getVLESSConfig(userIDs, hostName) {
 	// Prepare output string for each userID
 	const output = userIDArray.map((userID) => {
 		const vlessMain = 'vless://' + userID + '@' + hostName + commonUrlPart;
-		const vlessSec = 'vless://' + userID + '@' + proxyIP + commonUrlPart;
-		return `<h2>UUID: ${userID}</h2>${hashSeparator}\nv2ray port 443
+		const vlessSec = 'vless://' + userID + '@' + hostName + commonUrlPart;
+		return `<h2>VLESS CLOUDFLARE FREE</h2>${hashSeparator}\nv2ray port 443
 ---------------------------------------------------------------
 ${vlessMain}
 <button onclick='copyToClipboard("${vlessMain}")'><i class="fa fa-clipboard"></i> Copy vlessMain</button>
@@ -820,8 +820,8 @@ const portSet_https = new Set([443, 8443, 2053, 2096, 2087, 2083]);
 
 function createVLESSSub(userID_Path, hostName) {
 	const userIDArray = userID_Path.includes(',') ? userID_Path.split(',') : [userID_Path];
-	const commonUrlPart_http = `?encryption=none&security=none&fp=random&type=ws&host=${hostName}&path=%2Fsonzaix#`;
-	const commonUrlPart_https = `?encryption=none&security=tls&sni=${hostName}&fp=random&type=ws&host=${hostName}&path=%2Fsonzaix#`;
+	const commonUrlPart_http = `?encryption=none&security=none&fp=random&type=ws&host=${hostName}&path=%2Fvless-bodong#`;
+	const commonUrlPart_https = `?encryption=none&security=tls&sni=${hostName}&fp=random&type=ws&host=${hostName}&path=%2Fvless-bodong#`;
 
 	const output = userIDArray.flatMap((userID) => {
 		const httpConfigurations = Array.from(portSet_http).flatMap((port) => {
@@ -829,7 +829,7 @@ function createVLESSSub(userID_Path, hostName) {
 				const urlPart = `${hostName}-HTTP-${port}`;
 				const vlessMainHttp = 'vless://' + userID + '@' + hostName + ':' + '443' + commonUrlPart_http + urlPart;
 				return proxyIPs.flatMap((proxyIP) => {
-					const vlessSecHttp = 'vless://' + userID + '@' + proxyIP + ':' + '80' + commonUrlPart_http + urlPart + '-' + proxyIP + '-EDtunnel';
+					const vlessSecHttp = 'vless://' + userID + '@' + hostName + ':' + '80' + commonUrlPart_http + urlPart + '-' + hostName + '-EDtunnel';
 					return [vlessMainHttp, vlessSecHttp];
 				});
 			}
@@ -840,7 +840,7 @@ function createVLESSSub(userID_Path, hostName) {
 			const urlPart = `${hostName}-HTTPS-${port}`;
 			const vlessMainHttps = 'vless://' + userID + '@' + hostName + ':' + '443' + commonUrlPart_https + urlPart;
 			return proxyIPs.flatMap((proxyIP) => {
-				const vlessSecHttps = 'vless://' + userID + '@' + proxyIP + ':' + '80' + commonUrlPart_https + urlPart + '-' + proxyIP + '-EDtunnel';
+				const vlessSecHttps = 'vless://' + userID + '@' + hostName + ':' + '80' + commonUrlPart_https + urlPart + '-' + hostName + '-EDtunnel';
 				return [vlessMainHttps, vlessSecHttps];
 			});
 		});
