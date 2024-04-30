@@ -707,12 +707,12 @@ function getVLESSConfig(userIDs, hostName) {
 	const output = userIDArray.map((userID) => {
 		const vlessMain = 'vless://' + userID + '@' + hostName + commonUrlPart;
 		const vlessSec = 'vless://' + userID + '@' + hostName + commonUrlPartt;
-		return `<center><h2>VLESS CLOUDFLARE FREE</h2><center>${hashSeparator}\nv2ray port 443
+		return `<center><h2>VLESS CLOUDFLARE FREE</h2>${hashSeparator}\nvless port 443
 ---------------------------------------------------------------
 ${vlessMain}
 <button onclick='copyToClipboard("${vlessMain}")'><i class="fa fa-clipboard"></i> Copy vless port 443</button>
 ---------------------------------------------------------------
-v2ray port 80
+vless port 80
 ---------------------------------------------------------------
 ${vlessSec}
 <button onclick='copyToClipboard("${vlessSec}")'><i class="fa fa-clipboard"></i> Copy vless port 80</button>
