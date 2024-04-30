@@ -852,5 +852,5 @@ function createVLESSSub(userID_Path, hostName) {
 }
 
 const cn_hostnames = [
-	't.me/'trust_bodong,
+	't.me/trust_bodong',
 ];
