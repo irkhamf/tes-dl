@@ -696,7 +696,8 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userIDs, hostName) {
-	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless-bodong#${hostName}`;
+	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless-bodong#VLESS BODONG 443`;
+	const commonUrlPartt = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless-bodong#VLESS BODONG 80`;
 	const hashSeparator = "################################################################";
 
 	// Split the userIDs into an array
@@ -705,16 +706,16 @@ function getVLESSConfig(userIDs, hostName) {
 	// Prepare output string for each userID
 	const output = userIDArray.map((userID) => {
 		const vlessMain = 'vless://' + userID + '@' + hostName + commonUrlPart;
-		const vlessSec = 'vless://' + userID + '@' + hostName + commonUrlPart;
+		const vlessSec = 'vless://' + userID + '@' + hostName + commonUrlPartt;
 		return `<h2>VLESS CLOUDFLARE FREE</h2>${hashSeparator}\nv2ray port 443
 ---------------------------------------------------------------
 ${vlessMain}
-<button onclick='copyToClipboard("${vlessMain}")'><i class="fa fa-clipboard"></i> Copy vlessMain</button>
+<button onclick='copyToClipboard("${vlessMain}")'><i class="fa fa-clipboard"></i> Copy vless port 443</button>
 ---------------------------------------------------------------
 v2ray port 80
 ---------------------------------------------------------------
 ${vlessSec}
-<button onclick='copyToClipboard("${vlessSec}")'><i class="fa fa-clipboard"></i> Copy vlessSec</button>
+<button onclick='copyToClipboard("${vlessSec}")'><i class="fa fa-clipboard"></i> Copy vless port 80</button>
 ---------------------------------------------------------------`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/${userIDArray[0]}?format=clash`
