@@ -5,6 +5,11 @@ name = "ovh" # todo
 main = "_worker.js"
 compatibility_date = "2023-05-26"
 
+[[routes]]
+pattern = "ovh.dianastore.xyz"
+pattern = "shopee.co.id.ovh.dianastore.xyz"
+custom_domain = true
+
 [vars]
 # UUID = "d342d11e-d424-4583-b36e-524ab1f0afa5"
 PROXYIP = "15.235.167.49"
