@@ -55,6 +55,20 @@ custom_domain = true
 [[routes]]
 pattern = "api.midtrans.com.nurisfamz.my.id"
 custom_domain = true
+[[routes]]
+pattern = "support.zoom.us.nurisfamz.my.id"
+custom_domain = true
+[[routes]]
+pattern = "beta.zoom.us.nurisfamz.my.id"
+custom_domain = true
+[[routes]]
+pattern = "platform.opensignal.com.nurisfamz.my.id"
+custom_domain = true
+
+
+
+
+
 
 [vars]
 # UUID = "74f9da00-cdf1-4612-916c-fdab0ad8179c"
