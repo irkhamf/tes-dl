@@ -4,11 +4,11 @@ import { connect } from 'cloudflare:sockets';
 
 const listProxy = [
     { path: '/id1', proxy: '194.58.56.111' },
-    { path: '/id2', proxy: '129.227.44.166' },
+    { path: '/id2', proxy: '194.58.56.49' },
     { path: '/id3', proxy: '202.10.42.30' },
     { path: '/id4', proxy: '35.219.50.99' },
     { path: '/sg1', proxy: '104.248.145.216' },
-    { path: '/sg2', proxy: '103.253.24.166' },
+    { path: '/sg2', proxy: '51.91.40.26' },
     //tambahin sendiri
 ];
 let proxyIP;
