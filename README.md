@@ -1,28 +1,8 @@
-# EDtunnel
+# EDtunnel-rev
 
-<p align="center">
-  <img src="https://cloudflare-ipfs.com/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky" alt="edgetunnel" style="margin-bottom: -50px;">
-</p>
+Origional version was written by **3Kmfi6HP**.
 
-GitHub Repository for [https://github.com/zizifn/edgetunnel](https://github.com/zizifn/edgetunnel)
-
-ask question and cloudflare ips: [https://t.me/edtunnel](https://t.me/edtunnel)
-
-[![Repository](https://img.shields.io/badge/View%20on-GitHub-blue.svg)](https://github.com/zizifn/edgetunnel)
-
-## available branches and explain
-
-| Branch Name   | Description                                                   |
-| ------------- | ------------------------------------------------------------- |
-| remote-socks5 | Branch for remote SOCKS5 proxy pool used implementation       |
-| socks5        | Branch for SOCKS5 proxyIP implementation                      |
-| vless         | Branch for outbound VLESS protocol implementation             |
-| vless2        | Branch for alternative outbound VLESS protocol implementation |
-| code1         | Branch for code1 feature development                          |
-| code2         | Branch for code2 alternative feature development              |
-| dns           | Branch for DNS alternative related development                |
-| main          | Main branch for the project                                   |
-| pages         | New version for deployment on Cloudflare Pages                |
+中文版本说明：https://github.com/EDtunnel-rev/EDtunnel-rev/blob/main/README_ZH.md
 
 ## Deploy in pages.dev
 
@@ -34,11 +14,11 @@ ask question and cloudflare ips: [https://t.me/edtunnel](https://t.me/edtunnel)
 
 ## Deploy in worker.dev
 
-1. Copy `_worker.js` code from [here](https://github.com/3Kmfi6HP/EDtunnel/blob/main/_worker.js).
+1. Copy `_worker.js` code from [here](https://github.com/EDtunnel-rev/EDtunnel-rev/blob/main/_worker.js).
 
 2. Alternatively, you can click the button below to deploy directly.
 
-   [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/3Kmfi6HP/EDtunnel)
+   [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/EDtunnel-rev/EDtunnel-rev)
 
 ## Lazy to deploy
 
@@ -67,29 +47,29 @@ Note: `UUID` is the uuid you want to set. pages.dev and worker.dev all of them m
    ```
 
    note: uuid1, uuid2, uuid3 are separated by commas`,`.
-   when you set multiple uuid, you can use `https://edtunnel.pages.dev/uuid1` to get the clash config and vless:// link.
+   when you set multiple uuid, you can use `https://edtunnel-rev.pages.dev/uuid1` to get the clash config and vless:// link.
 
 ## subscribe vless:// link (Optional)
 
-1. visit `https://edtunnel.pages.dev/uuid your set` to get the subscribe link.
+1. visit `https://edtunnel-rev.pages.dev/uuid your set` to get the subscribe link.
 
-2. visit `https://edtunnel.pages.dev/sub/uuid your set` to get the subscribe content with `uuid your set` path.
-
-   note: `uuid your set` is the uuid you set in UUID enviroment or `wrangler.toml`, `_worker.js` file.
-   when you set multiple uuid, you can use `https://edtunnel.pages.dev/sub/uuid1` to get the subscribe content with `uuid1` path.(only support first uuid in multiple uuid set)
-
-3. visit `https://edtunnel.pages.dev/sub/uuid your set/?format=clash` to get the subscribe content with `uuid your set` path and `clash` format. content will return with base64 encode.
+2. visit `https://edtunnel-rev.pages.dev/sub/uuid your set` to get the subscribe content with `uuid your set` path.
 
    note: `uuid your set` is the uuid you set in UUID enviroment or `wrangler.toml`, `_worker.js` file.
-   when you set multiple uuid, you can will use `https://edtunnel.pages.dev/sub/uuid1/?format=clash` to get the subscribe content with `uuid1` path and `clash` format.(only support first uuid in multiple uuid set)
+   when you set multiple uuid, you can use `https://edtunnel-rev.pages.dev/sub/uuid1` to get the subscribe content with `uuid1` path.(only support first uuid in multiple uuid set)
+
+3. visit `https://edtunnel-rev.pages.dev/sub/uuid your set/?format=clash` to get the subscribe content with `uuid your set` path and `clash` format. content will return with base64 encode.
+
+   note: `uuid your set` is the uuid you set in UUID enviroment or `wrangler.toml`, `_worker.js` file.
+   when you set multiple uuid, you can will use `https://edtunnel-rev.pages.dev/sub/uuid1/?format=clash` to get the subscribe content with `uuid1` path and `clash` format.(only support first uuid in multiple uuid set)
 
 ## subscribe Cloudflare bestip(pure ip) link
 
-1. visit `https://edtunnel.pages.dev/bestip/uuid your set` to get subscribe info.
+1. visit `https://edtunnel-rev.pages.dev/bestip/uuid your set` to get subscribe info.
 
-2. cpoy subscribe url link `https://edtunnel.pages.dev/bestip/uuid your set` to any clients(clash/v2rayN/v2rayNG) you want to use.
+2. cpoy subscribe url link `https://edtunnel-rev.pages.dev/bestip/uuid your set` to any clients(clash/v2rayN/v2rayNG) you want to use.
 
-3. done. if have any questions please join [@edtunnel](https://t.me/edtunnel)
+3. done. if have any questions please join [@edtunrev](https://t.me/edtunrev)
 
 ## multiple port support (Optional)
 
@@ -120,15 +100,23 @@ resons: Outbound TCP sockets to Cloudflare IP ranges are temporarily blocked, pl
 
 ## Usage
 
-frist, open your pages.dev domain `https://edtunnel.pages.dev/` in your browser, then you can see the following page:
+frist, open your pages.dev domain `https://edtunnel-rev.pages.dev/` in your browser, then you can see the following page:
 The path `/uuid your seetting` to get the clash config and vless:// link.
+
+## Special Thanks
+
+1.Github users who contributes to this program, no matter whether their branches are merged by the owner. They're --- @rayhanbone. @kardus911 and others.(see them at https://github.com/EDtunnel-rev/EDtunnel-rev/pulls and https://github.com/EDtunnel-rev/EDtunnel-rev/graphs/contributors)
+
+2.Those who have forked, starred, and watched this is repository.(see them at https://github.com/EDtunnel-rev/EDtunnel-rev/watchers, https://github.com/EDtunnel-rev/EDtunnel-rev/stargazers, https://github.com/EDtunnel-rev/EDtunnel-rev/forks)
+
+3.All people from linux.do. They supported me and helped me with this repository.
 
 ## Star History
 
-<a href="https://star-history.com/#3Kmfi6HP/EDtunnel&Date">
+<a href="https://star-history.com/#EDtunnel-rev/EDtunnel-rev&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=3Kmfi6HP/EDtunnel&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=3Kmfi6HP/EDtunnel&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=3Kmfi6HP/EDtunnel&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=EDtunnel-rev/EDtunnel-rev&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=EDtunnel-rev/EDtunnel-rev&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=EDtunnel-rev/EDtunnel-rev&type=Date" />
   </picture>
 </a>
