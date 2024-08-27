@@ -94,7 +94,7 @@ jobs:
         # github.com/cloudflare/wrangler-action
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          apiToken: NfA4WCGwy54Fz_f4GAM3HiDgH-mmqJWTntyRL0Ql
+          apiToken: 06r2Tg2uvKd9qLnSx6u_5kPabRXrVU67u0zdecyP
           # input overrides env-defaults, regardless
           environment: ${{ env.WORKERS_ENV }}
         env:
