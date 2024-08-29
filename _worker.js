@@ -49,8 +49,8 @@ async function getVLESSConfig(path, hostName, proxyIP) {
         const city = data.city;
         const country_code = data.country_code;
         const pathFixed = encodeURIComponent(path);
-        const vlessTls = `vless://bexnxx\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=${pathFixed}#${isp} (${country_code})`;
-        const vlessNtls = `vless://bexnxx\u0040${hostName}:80?path=${pathFixed}&security=none&encryption=none&host=${hostName}&fp=randomized&type=ws&sni=${hostName}#${isp} (${country_code})`;
+        const vlessTls = `vless://34ecc1c2-6eac-4796-9f55-929dc4380c84\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=${pathFixed}#${isp} (${country_code})`;
+        const vlessNtls = `vless://34ecc1c2-6eac-4796-9f55-929dc4380c84\u0040${hostName}:80?path=${pathFixed}&security=none&encryption=none&host=${hostName}&fp=randomized&type=ws&sni=${hostName}#${isp} (${country_code})`;
         const vlessTlsFixed = vlessTls.replace(/ /g, '+');
         const vlessNtlsFixed = vlessNtls.replace(/ /g, '+');
         return `
