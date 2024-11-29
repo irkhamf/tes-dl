@@ -16,7 +16,7 @@ let พร็อกซีไอพี = พร็อกซีไอพีs[Math.
 
 let dohURL = 'https://cloudflare-dns.com/dns-query'; //  or https://dns.google/dns-query
 
-if (!isValidUUID(userID)) { fwewewfwfwfQF QFafqwaf
+if (!isValidUUID(userID)) {
 	throw new Error('uuid is invalid');
 }
 
